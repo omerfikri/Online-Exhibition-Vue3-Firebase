@@ -1,3 +1,15 @@
-<script></script>
+<template>
+  <HomeNavbar />
+  <div class="container">
+    <router-view />
+  </div>
+</template>
 
-<template></template>
+<script>
+  import HomeNavbar from "@/components/home/HomeNavbar.vue";
+  export default {
+    components: {
+      HomeNavbar,
+    },
+  };
+</script>
