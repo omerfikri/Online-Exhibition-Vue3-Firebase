@@ -1,21 +1,37 @@
 <template>
   <nav class="black">
-    <li class="brand-logo">Online Exhibition Admin</li>
+    <li class="brand-logo">Online Exhibition</li>
     <ul class="right">
       <span v-if="adminBtn || employeeBtn">
         <li>
-          <a class="waves-effect waves-red btn-flat navbar-btn">Sergi</a>
+          <router-link
+            :to="{ name: 'CreateExhibition' }"
+            class="waves-effect waves-red btn-flat navbar-btn"
+            >Exhibition</router-link
+          >
         </li>
         <li>
-          <a class="waves-effect waves-red btn-flat navbar-btn">Resim</a>
+          <router-link
+            :to="{ name: 'AddImage' }"
+            class="waves-effect waves-red btn-flat navbar-btn"
+            >Picture</router-link
+          >
         </li>
       </span>
       <span v-if="adminBtn">
         <li>
-          <a class="waves-effect waves-red btn-flat navbar-btn">Yönetim</a>
+          <router-link
+            :to="{ name: 'Management' }"
+            class="waves-effect waves-red btn-flat navbar-btn"
+            >Management</router-link
+          >
         </li>
         <li>
-          <a class="waves-effect waves-red btn-flat navbar-btn">Mesajlar</a>
+          <router-link
+            :to="{ name: 'Messages' }"
+            class="waves-effect waves-red btn-flat navbar-btn"
+            >Messages</router-link
+          >
         </li>
       </span>
       <li>
@@ -43,7 +59,6 @@
   import { onMounted, ref } from "vue";
   import getUser from "@/composables/getUser";
   import { collection, query, where, getDocs } from "firebase/firestore";
-  import getAuthority from "@/composables/getAuthority";
 
   export default {
     setup() {
@@ -51,8 +66,6 @@
       const employeeBtn = ref(false);
 
       const router = useRouter();
-
-      //  const {position} = getAuthority()
 
       onMounted(async () => {
         const { kullanici } = getUser();

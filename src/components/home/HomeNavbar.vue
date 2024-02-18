@@ -46,7 +46,7 @@
               userName: displayName,
               email,
               photoURL: photoURL,
-              position: "yok",
+              position: "no",
             };
 
             await addDoc(collection(db, "users"), newUser).then(() => {

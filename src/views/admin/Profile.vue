@@ -116,7 +116,7 @@
           const newMessage = {
             message: messageText.value,
             from: uid,
-            to: "Admin",
+            to: "admin",
             createdDate: timestamp,
             activity: true,
           };
