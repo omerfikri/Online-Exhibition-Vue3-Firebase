@@ -112,7 +112,6 @@
 
       const sendMessage = async () => {
         if (messageText.value != "") {
-          console.log(messageText.value);
           const newMessage = {
             message: messageText.value,
             from: uid,

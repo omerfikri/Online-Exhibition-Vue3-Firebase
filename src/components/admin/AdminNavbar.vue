@@ -5,13 +5,6 @@
       <span v-if="adminBtn || employeeBtn">
         <li>
           <router-link
-            :to="{ name: 'CreateExhibition' }"
-            class="waves-effect waves-red btn-flat navbar-btn"
-            >Exhibition</router-link
-          >
-        </li>
-        <li>
-          <router-link
             :to="{ name: 'AddImage' }"
             class="waves-effect waves-red btn-flat navbar-btn"
             >Picture</router-link
@@ -19,6 +12,13 @@
         </li>
       </span>
       <span v-if="adminBtn">
+        <li>
+          <router-link
+            :to="{ name: 'CreateExhibition' }"
+            class="waves-effect waves-red btn-flat navbar-btn"
+            >Exhibition</router-link
+          >
+        </li>
         <li>
           <router-link
             :to="{ name: 'Management' }"

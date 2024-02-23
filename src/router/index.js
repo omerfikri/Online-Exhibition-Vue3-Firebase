@@ -9,6 +9,7 @@ import Management from "@/views/admin/Management.vue";
 import Messages from "@/views/admin/Messages.vue";
 import AddImage from "@/views/admin/AddImage.vue";
 import CreateExhibition from "@/views/admin/CreateExhibition.vue";
+import Exhibition from "@/views/home/Exhibition.vue";
 
 const authControl = (to, from, next) => {
   let kullanici = auth.currentUser;
@@ -56,6 +57,11 @@ const router = createRouter({
           path: "exhibition-list",
           name: "ExhibitionList",
           component: ExhibitionList,
+        },
+        {
+          path: "exhibition-list/:exhibitionId",
+          name: "Exhibition",
+          component: Exhibition,
         },
       ],
     },
